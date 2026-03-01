@@ -1,0 +1,23 @@
+[
+  { "name": "Undefined Debit"  },
+  { "name": "Undefined Credit" },
+  { "name": "Food"             },
+  { "name": "Health"           },
+  { "name": "Goods"            },
+  { "name": "Services"         },
+  { "name": "Entertainment"    },
+  { "name": "Education"        },
+  { "name": "Loans"            },
+  { "name": "Income"           },
+  { "name": "Govt Welfare"     },
+  { "name": "Transport"        },
+  { "name": "Utilities"        },
+  { "name": "Insurance"        },
+  { "name": "Cash"             },
+  { "name": "Misc Debit"       },
+  { "name": "Misc Credit"      },
+  { "name": "Tax"              },
+  { "name": "Investment"       },
+  { "name": "Holiday"          },
+  { "name": "Renovation"       }
+]

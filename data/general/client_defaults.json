@@ -1,0 +1,7 @@
+[
+  {
+    "name": "admin",
+    "password": "changeme",
+    "type": "admin"
+  }
+]

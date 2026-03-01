@@ -1,0 +1,383 @@
+[
+  {
+    "name": "Undefined Debit",
+    "group": "Undefined Debit",
+    "type": "Debit Normal",
+    "classifiers": []
+  },
+  {
+    "name": "Undefined Credit",
+    "group": "Undefined Credit",
+    "type": "Credit Normal",
+    "classifiers": []
+  },
+  {
+    "name": "Supermarket",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(COLES|WOOLWORTHS|WOOLIES|IGA|ALDI|FOODWORKS|DRAKES|HARRIS FARM|COSTCO|SPAR).*" },
+      { "regex": ".*SUPERMARKET.*" }
+    ]
+  },
+  {
+    "name": "Bakery",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(BAKERY|BREAD|CROISSANT|PATISSERIE).*" }
+    ]
+  },
+  {
+    "name": "Cafe",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(CAFE|COFFEE|STARBUCKS|HUDSONS|GLORIA JEANS|MUFFIN BREAK|THE COFFEE CLUB).*" }
+    ]
+  },
+  {
+    "name": "Restaurant",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(RESTAURANT|DINING|BISTRO|PIZZERIA|SUSHI|NOODLE|CURRY|KEBAB|THAI|CHINESE|JAPANESE|INDIAN|MEXICAN|ITALIAN).*" }
+    ]
+  },
+  {
+    "name": "Fast Food",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(MCDONALD|MCDONALDS|HUNGRY JACKS|KFC|SUBWAY|DOMINO|PIZZA HUT|OPORTO|GRILL'D|RED ROOSTER|NANDOS|GUZMAN|TACO BELL|BURGER KING).*" }
+    ]
+  },
+  {
+    "name": "Alcohol",
+    "group": "Food",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(LIQUORLAND|BWS|DAN MURPHY|BOTTLE-O|CELLARBRATIONS|VINTAGE CELLARS|FIRST CHOICE|NICKS WINE).*" }
+    ]
+  },
+  {
+    "name": "Pharmacy",
+    "group": "Health",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(PHARMACY|CHEMIST|PRICELINE|CHEMIST WAREHOUSE|TERRY WHITE|BLOOMS THE CHEMIST).*" }
+    ]
+  },
+  {
+    "name": "Medical",
+    "group": "Health",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(MEDICAL|DOCTOR|DR |CLINIC|HOSPITAL|PATHOLOGY|RADIOLOGY|SPECIALIST|PHYSIO|DENTIST|OPTOMETRIST|PSYCHOLOGIST).*" }
+    ]
+  },
+  {
+    "name": "Gym",
+    "group": "Health",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(GYM|FITNESS|ANYTIME FITNESS|PLANET FITNESS|JETTS|SNAP FITNESS|F45|CROSSFIT|YOGA|PILATES).*" }
+    ]
+  },
+  {
+    "name": "Electronics",
+    "group": "Goods",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(JB HI-FI|JBHIFI|HARVEY NORMAN|THE GOOD GUYS|APPLE STORE|OFFICEWORKS|JAYCAR|DICK SMITH).*" }
+    ]
+  },
+  {
+    "name": "Clothing",
+    "group": "Goods",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(KMART|TARGET|BIG W|MYER|DAVID JONES|COTTON ON|UNIQLO|H&M|ZARA|COUNTRY ROAD|BONDS|RIVERS|BEST & LESS).*" }
+    ]
+  },
+  {
+    "name": "Hardware",
+    "group": "Goods",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(BUNNINGS|MITRE 10|TOTAL TOOLS|MASTERS|HARDWARE).*" }
+    ]
+  },
+  {
+    "name": "Online Shopping",
+    "group": "Goods",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(AMAZON|EBAY|CATCH\\.COM|KOGAN|WISH|ALIEXPRESS).*" }
+    ]
+  },
+  {
+    "name": "Professional Services",
+    "group": "Services",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(ACCOUNTANT|SOLICITOR|LAWYER|CONVEYANCER|PLUMBER|ELECTRICIAN|LOCKSMITH|BUILDER|TRADESMAN).*" }
+    ]
+  },
+  {
+    "name": "Subscriptions",
+    "group": "Services",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(NETFLIX|SPOTIFY|STAN|DISNEY|PRIME VIDEO|YOUTUBE PREMIUM|APPLE ONE|MICROSOFT 365|ADOBE|DROPBOX|GOOGLE ONE).*" }
+    ]
+  },
+  {
+    "name": "Telecoms",
+    "group": "Services",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(TELSTRA|OPTUS|VODAFONE|BOOST MOBILE|AMAYSIM|ALDI MOBILE|BELONG|AUSSIE BROADBAND|AUSSIE BB|TPG|INTERNODE|IINET).*" }
+    ]
+  },
+  {
+    "name": "Entertainment & Leisure",
+    "group": "Entertainment",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(CINEMA|HOYTS|EVENT CINEMAS|VILLAGE CINEMAS|READING CINEMAS|BOWLING|LASER TAG|ESCAPE ROOM|ARCADE|THEME PARK|ZOO|MUSEUM|GALLERY|CONCERT|TICKETEK|TICKETMASTER).*" }
+    ]
+  },
+  {
+    "name": "Books & Education",
+    "group": "Education",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(AMAZON BOOKS|BOOK|BOOKTOPIA|ANGUS|COLLINS|DYMOCKS|COURSERA|UDEMY|LINKEDIN LEARNING|TAFE|UNIVERSITY|UNI|MONASH|RMIT|DEAKIN).*" }
+    ]
+  },
+  {
+    "name": "Rent / Mortgage",
+    "group": "Loans",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(RENT|REAL ESTATE|PROPERTY MANAGEMENT|MORTGAGE|HOME LOAN).*" }
+    ]
+  },
+  {
+    "name": "Loan Repayment",
+    "group": "Loans",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(LOAN|REPAYMENT|FINANCE|PERSONAL LOAN|CAR LOAN).*" }
+    ]
+  },
+  {
+    "name": "Salary",
+    "group": "Income",
+    "type": "Credit Normal",
+    "classifiers": [
+      { "regex": ".*(SALARY|PAYROLL|PAY|WAGES|EMPLOYER).*" }
+    ]
+  },
+  {
+    "name": "Interest",
+    "group": "Income",
+    "type": "Credit Normal",
+    "classifiers": [
+      { "regex": ".*(INTEREST|INT EARNED|INT CREDIT).*" }
+    ]
+  },
+  {
+    "name": "Centrelink",
+    "group": "Govt Welfare",
+    "type": "Credit Normal",
+    "classifiers": [
+      { "regex": ".*(CENTRELINK|DEPT HUMAN SERVICES|DHS|FAMILY TAX|FTB|YOUTH ALLOWANCE|NEWSTART|JOBSEEKER|ATO REFUND).*" }
+    ]
+  },
+  {
+    "name": "Petrol",
+    "group": "Transport",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(PETROL|FUEL|BP |SHELL |CALTEX|AMPOL|7-ELEVEN|PUMA ENERGY|LIBERTY|UNITED PETROLEUM).*" }
+    ]
+  },
+  {
+    "name": "Public Transport",
+    "group": "Transport",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(MYKI|TRANSLINK|OPAL|METROCARD|BUS|TRAM|TRAIN|METRO|PUBLIC TRANSPORT).*" }
+    ]
+  },
+  {
+    "name": "Parking",
+    "group": "Transport",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(PARKING|WILSON|CARE PARK|SECURE PARKING|PARK ASSIST|PARKING FINE).*" }
+    ]
+  },
+  {
+    "name": "Rideshare",
+    "group": "Transport",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(UBER|DIDI|OLA|LYFT|TAXIFY|BOLT).*" }
+    ]
+  },
+  {
+    "name": "Electricity",
+    "group": "Utilities",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(ENERGY|ELECTRICITY|POWERCOR|AGL|ORIGIN ENERGY|ENERGYAUSTRALIA|RED ENERGY|SIMPLY ENERGY|LUMO|MOMENTUM).*" }
+    ]
+  },
+  {
+    "name": "Gas",
+    "group": "Utilities",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(GAS|JEMENA|AUSGRID|MULTINET|ATCO|GAS SUPPLY).*" }
+    ]
+  },
+  {
+    "name": "Water",
+    "group": "Utilities",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(WATER|YARRA VALLEY WATER|SOUTH EAST WATER|CITY WEST WATER|MELBOURNE WATER|SA WATER|SYDNEY WATER|ICON WATER|UNITY WATER).*" }
+    ]
+  },
+  {
+    "name": "Home Insurance",
+    "group": "Insurance",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(HOME INSURANCE|BUILDING INSURANCE|CONTENTS INSURANCE|AAMI|ALLIANZ|BUDGET DIRECT|SUNCORP|GIO|YOUI|NRMA|RAA|RACQ|RAC).*" }
+    ]
+  },
+  {
+    "name": "Car Insurance",
+    "group": "Insurance",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(CAR INSURANCE|CTP|GREEN SLIP|COMPULSORY THIRD PARTY).*" }
+    ]
+  },
+  {
+    "name": "Health Insurance",
+    "group": "Insurance",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(HEALTH INSURANCE|MEDIBANK|BUPA|HCF|NIB|HBFS|AHSA|DOCTORS HEALTH FUND|HOSPITAL COVER|EXTRAS COVER).*" }
+    ]
+  },
+  {
+    "name": "Life Insurance",
+    "group": "Insurance",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(LIFE INSURANCE|INCOME PROTECTION|TPD|TRAUMA INSURANCE|ZURICH|TAL|METLIFE|AIA|CLEARVIEW).*" }
+    ]
+  },
+  {
+    "name": "ATM / Cash Out",
+    "group": "Cash",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(ATM|CASH OUT|WITHDRAWAL|WITHDRAW).*" }
+    ]
+  },
+  {
+    "name": "Cash Deposit",
+    "group": "Cash",
+    "type": "Credit Normal",
+    "classifiers": [
+      { "regex": ".*(CASH DEPOSIT|DEPOSIT|CDM).*" }
+    ]
+  },
+  {
+    "name": "Tax Payment",
+    "group": "Tax",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(ATO|AUSTRALIAN TAXATION|TAX OFFICE|BAS|PAYG|PAYG WITHHOLDING).*" }
+    ]
+  },
+  {
+    "name": "Investment",
+    "group": "Investment",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(COMMSEC|NABTRADE|WESTPAC ONLINE|SELFWEALTH|SUPERHERO|STAKE|SPACESHIP|RAIZ|BETASHARES|VANGUARD|STATE STREET|ISHARES).*" }
+    ]
+  },
+  {
+    "name": "Dividends",
+    "group": "Investment",
+    "type": "Credit Normal",
+    "classifiers": [
+      { "regex": ".*(DIVIDEND|DISTRIBUTION|TRUST DIST|DIST CR).*" }
+    ]
+  },
+  {
+    "name": "Accommodation",
+    "group": "Holiday",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(AIRBNB|BOOKING.COM|HOTELS.COM|TRIVAGO|EXPEDIA|WOTIF|ACCOR|MARRIOTT|HILTON|HYATT|IHG|STARWOOD).*" }
+    ]
+  },
+  {
+    "name": "Flights",
+    "group": "Holiday",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(QANTAS|VIRGIN AUSTRALIA|JETSTAR|TIGER AIR|REX AIRLINES|AIRWAYS|AIRFARE|FLIGHT).*" }
+    ]
+  },
+  {
+    "name": "Renovation Materials",
+    "group": "Renovation",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(TILE|FLOORING|TIMBER|PAINT|PLASTERBOARD|INSULATION|RENOVATION|BATHROOM|KITCHEN|CABINET).*" }
+    ]
+  },
+  {
+    "name": "Bank Fee",
+    "group": "Misc Debit",
+    "type": "Debit Normal",
+    "classifiers": [
+      { "regex": ".*(BANK FEE|ACCOUNT FEE|MONTHLY FEE|TRANSACTION FEE|DISHONOUR FEE|OVER LIMIT FEE).*" }
+    ]
+  },
+  {
+    "name": "Misc Debit",
+    "group": "Misc Debit",
+    "type": "Debit Normal",
+    "classifiers": []
+  },
+  {
+    "name": "Misc Credit",
+    "group": "Misc Credit",
+    "type": "Credit Normal",
+    "classifiers": []
+  },
+  {
+    "name": "Debit Abnormal",
+    "group": "Misc Debit",
+    "type": "Debit Abnormal",
+    "classifiers": []
+  },
+  {
+    "name": "Credit Abnormal",
+    "group": "Misc Credit",
+    "type": "Credit Abnormal",
+    "classifiers": []
+  }
+]

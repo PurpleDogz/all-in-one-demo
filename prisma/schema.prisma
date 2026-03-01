@@ -1,0 +1,172 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ────────────────────────────────────────────────────────────
+// Enums
+// ────────────────────────────────────────────────────────────
+
+enum WorkspaceRole {
+  viewer
+  maintainer
+  admin
+}
+
+// ────────────────────────────────────────────────────────────
+// Auth / system-level models
+// ────────────────────────────────────────────────────────────
+
+model User {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  passwordHash String
+  type         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  memberships   WorkspaceMember[]
+  refreshTokens RefreshToken[]
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ────────────────────────────────────────────────────────────
+// Multi-tenancy
+// ────────────────────────────────────────────────────────────
+
+model Workspace {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  members          WorkspaceMember[]
+  transactionTypes TransactionType[]
+  groups           TransactionGroup[]
+  classes          TransactionClass[]
+  sources          TransactionSource[]
+  sourceFiles      TransactionSourceFile[]
+}
+
+model WorkspaceMember {
+  id          String        @id @default(cuid())
+  workspaceId String
+  userId      String
+  role        WorkspaceRole
+  createdAt   DateTime      @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+}
+
+// ────────────────────────────────────────────────────────────
+// Taxonomy (per-workspace)
+// ────────────────────────────────────────────────────────────
+
+model TransactionType {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  hidden      Boolean @default(false)
+
+  workspace Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  classes   TransactionClass[]
+
+  @@unique([workspaceId, name])
+}
+
+model TransactionGroup {
+  id          String @id @default(cuid())
+  workspaceId String
+  name        String
+
+  workspace Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  classes   TransactionClass[]
+
+  @@unique([workspaceId, name])
+}
+
+model TransactionClass {
+  id          String @id @default(cuid())
+  workspaceId String
+  name        String
+  groupId     String
+  typeId      String
+
+  workspace    Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  group        TransactionGroup @relation(fields: [groupId], references: [id])
+  type         TransactionType  @relation(fields: [typeId], references: [id])
+  classifiers  ClassifierRule[]
+  transactions Transaction[]
+
+  @@unique([workspaceId, name])
+}
+
+model ClassifierRule {
+  id       String   @id @default(cuid())
+  classId  String
+  regex    String
+  value    Decimal? @db.Decimal(12, 2)
+  valueMin Decimal? @db.Decimal(12, 2)
+  valueMax Decimal? @db.Decimal(12, 2)
+  date     String?
+
+  class TransactionClass @relation(fields: [classId], references: [id], onDelete: Cascade)
+}
+
+// ────────────────────────────────────────────────────────────
+// Transaction data (per-workspace)
+// ────────────────────────────────────────────────────────────
+
+model TransactionSource {
+  id          String @id @default(cuid())
+  workspaceId String
+  name        String
+  type        String
+
+  workspace    Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  transactions Transaction[]
+
+  @@unique([workspaceId, name])
+}
+
+model TransactionSourceFile {
+  id          String   @id @default(cuid())
+  workspaceId String
+  name        String
+  dataHash    String
+  createdAt   DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, name])
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  date        DateTime @db.Date
+  description String
+  amount      Decimal  @db.Decimal(12, 2)
+  classId     String?
+  sourceId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  class  TransactionClass? @relation(fields: [classId], references: [id])
+  source TransactionSource @relation(fields: [sourceId], references: [id])
+}
